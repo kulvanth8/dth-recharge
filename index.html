@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recharge Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Recharge Tracker</h1>
+        <form id="rechargeForm" autocomplete="off">
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="text" id="mobile" name="mobile" required maxlength="10" pattern="\d{10}" placeholder="e.g. 9876543210">
+            </div>
+            <div class="form-group">
+                <label for="operator">Operator</label>
+                <input type="text" id="operator" name="operator" required placeholder="e.g. Airtel, Jio">
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" name="amount" required min="1" placeholder="e.g. 199">
+            </div>
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <button type="submit">Add Recharge</button>
+        </form>
+        <h2>Recharge History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Mobile Number</th>
+                    <th>Operator</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="rechargeList">
+                <!-- Recharge records will appear here -->
+            </tbody>
+        </table>
+        <button id="clearAll" class="danger">Clear All</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
